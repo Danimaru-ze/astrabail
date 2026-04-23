@@ -1,10 +1,10 @@
 {
   "name": "astrabail",
-  "version": "1.0.0",
+  "version": "1.0.8",
   "update": "23 April 2026",
-  "description": "AstraBail — Professional WhatsApp Web API Library by Danimaru-ze",
+  "description": "Professional Whatsapp Web API Library",
   "keywords": [
-    "jagoan",
+    "astra",
     "whatsapp",
     "whatsapp-api",
     "whatsapp-web",
@@ -12,14 +12,14 @@
     "automation",
     "multi-device"
   ],
-  "homepage": "https://whatsapp.com/channel/0029VanhMDo42DcjiRGJOc2m",
+  "homepage": "https://whatsapp.com/channel/0029Vazo6KM8kyyJ4eWh3A25",
   "repository": {
     "type": "git",
     "url": "https://github.com/Danimaru-ze/AstraBail"
   },
   "funding": {
     "type": "youtube",
-    "url": "https://youtube.com/@jagoanproject"
+    "url": "https://youtube.com/@AstraBail"
   },
   "license": "MIT",
   "author": "Danimaru-ze",
@@ -41,10 +41,6 @@
     "gen:protobuf": "sh WAProto/GenerateStatics.sh",
     "lint": "eslint src --ext .js,.ts,.jsx,.tsx",
     "lint:fix": "eslint src --fix --ext .js,.ts,.jsx,.tsx",
-    "prepack": "node ./lib/Defaults/update-wa-version.js",
-    "prepare": "echo 'Wileys WhatsApp Library'",
-    "postinstall": "node ./lib/Defaults/update-wa-version.js",
-    "preinstall": "node ./engine-requirements.js",
     "release": "release-it",
     "test": "jest"
   },
