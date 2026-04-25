@@ -8,3 +8,5 @@ export declare class USyncLIDProtocol implements USyncQueryProtocol {
     parser(node: BinaryNode): string | null;
 }
 //# sourceMappingURL=UsyncLIDProtocol.d.ts.map
+
+

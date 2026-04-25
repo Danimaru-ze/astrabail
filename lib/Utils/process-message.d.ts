@@ -1,12 +1,12 @@
 import { proto } from '../../WAProto/index.js';
-import type { AuthenticationCreds, BaileysEventEmitter, CacheStore, SignalKeyStoreWithTransaction, SignalRepositoryWithLIDStore, SocketConfig, WAMessage, WAMessageKey } from '../Types/index.js';
+import type { AuthenticationCreds, AstraBailEventEmitter, CacheStore, SignalKeyStoreWithTransaction, SignalRepositoryWithLIDStore, SocketConfig, WAMessage, WAMessageKey } from '../Types/index.js';
 import type { ILogger } from './logger.js';
 type ProcessMessageContext = {
     shouldProcessHistoryMsg: boolean;
     placeholderResendCache?: CacheStore;
     creds: AuthenticationCreds;
     keyStore: SignalKeyStoreWithTransaction;
-    ev: BaileysEventEmitter;
+    ev: AstraBailEventEmitter;
     logger?: ILogger;
     options: RequestInit;
     signalRepository: SignalRepositoryWithLIDStore;
@@ -58,3 +58,5 @@ export declare function decryptEventResponse({ encPayload, encIv }: proto.Messag
 declare const processMessage: (message: WAMessage, { shouldProcessHistoryMsg, placeholderResendCache, ev, creds, signalRepository, keyStore, logger, options, getMessage }: ProcessMessageContext) => Promise<void>;
 export default processMessage;
 //# sourceMappingURL=process-message.d.ts.map
+
+

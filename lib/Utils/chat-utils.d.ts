@@ -1,5 +1,5 @@
 import { proto } from '../../WAProto/index.js';
-import type { BaileysEventEmitter, ChatModification, ChatMutation, Contact, InitialAppStateSyncOptions, LTHashState, WAPatchCreate, WAPatchName } from '../Types/index.js';
+import type { AstraBailEventEmitter, ChatModification, ChatMutation, Contact, InitialAppStateSyncOptions, LTHashState, WAPatchCreate, WAPatchName } from '../Types/index.js';
 import { type BinaryNode } from '../WABinary/index.js';
 import type { ILogger } from './logger.js';
 type FetchAppStateSyncKey = (keyId: string) => Promise<proto.Message.IAppStateSyncKeyData | null | undefined>;
@@ -65,6 +65,8 @@ export declare const decodePatches: (name: WAPatchName, syncds: proto.ISyncdPatc
     mutationMap: ChatMutationMap;
 }>;
 export declare const chatModificationToAppPatch: (mod: ChatModification, jid: string) => WAPatchCreate;
-export declare const processSyncAction: (syncAction: ChatMutation, ev: BaileysEventEmitter, me: Contact, initialSyncOpts?: InitialAppStateSyncOptions, logger?: ILogger) => void;
+export declare const processSyncAction: (syncAction: ChatMutation, ev: AstraBailEventEmitter, me: Contact, initialSyncOpts?: InitialAppStateSyncOptions, logger?: ILogger) => void;
 export {};
 //# sourceMappingURL=chat-utils.d.ts.map
+
+

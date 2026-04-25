@@ -70,8 +70,8 @@ export declare const makeChatsSocket: (config: SocketConfig) => {
     removeQuickReply: (timestamp: string) => Promise<void>;
     type: "md";
     ws: import("./Client/websocket.js").WebSocketClient;
-    ev: import("../Types/index.js").BaileysEventEmitter & {
-        process(handler: (events: Partial<import("../Types/index.js").BaileysEventMap>) => void | Promise<void>): () => void;
+    ev: import("../Types/index.js").AstraBailEventEmitter & {
+        process(handler: (events: Partial<import("../Types/index.js").AstraBailEventMap>) => void | Promise<void>): () => void;
         buffer(): void;
         createBufferedFunction<A extends any[], T>(work: (...args: A) => Promise<T>): (...args: A) => Promise<T>;
         flush(): boolean;
@@ -109,3 +109,5 @@ export declare const makeChatsSocket: (config: SocketConfig) => {
     }[] | undefined>;
 };
 //# sourceMappingURL=chats.d.ts.map
+
+

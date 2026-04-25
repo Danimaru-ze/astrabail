@@ -20,3 +20,6 @@ export declare class LTHashAntiTampering {
     private multipleOp;
     private performPointwiseWithOverflow;
 }
+
+
+

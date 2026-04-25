@@ -203,8 +203,8 @@ declare const makeWASocket: (config: UserFacingSocketConfig) => {
     removeQuickReply: (timestamp: string) => Promise<void>;
     type: "md";
     ws: import("./Client/index.js").WebSocketClient;
-    ev: import("../index.js").BaileysEventEmitter & {
-        process(handler: (events: Partial<import("../index.js").BaileysEventMap>) => void | Promise<void>): () => void;
+    ev: import("../index.js").AstraBailEventEmitter & {
+        process(handler: (events: Partial<import("../index.js").AstraBailEventMap>) => void | Promise<void>): () => void;
         buffer(): void;
         createBufferedFunction<A extends any[], T>(work: (...args: A) => Promise<T>): (...args: A) => Promise<T>;
         flush(): boolean;
@@ -243,3 +243,5 @@ declare const makeWASocket: (config: UserFacingSocketConfig) => {
 };
 export default makeWASocket;
 //# sourceMappingURL=index.d.ts.map
+
+

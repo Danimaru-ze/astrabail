@@ -9,3 +9,5 @@ export declare const configureSuccessfulPairing: (stanza: BinaryNode, { advSecre
 };
 export declare const encodeSignedDeviceIdentity: (account: proto.IADVSignedDeviceIdentity, includeSignatureKey: boolean) => Uint8Array<ArrayBufferLike>;
 //# sourceMappingURL=validate-connection.d.ts.map
+
+

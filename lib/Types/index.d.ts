@@ -18,7 +18,7 @@ export type UserFacingSocketConfig = Partial<SocketConfig> & {
 export type BrowsersMap = {
     ubuntu(browser: string): [string, string, string];
     macOS(browser: string): [string, string, string];
-    baileys(browser: string): [string, string, string];
+    AstraBail(browser: string): [string, string, string];
     windows(browser: string): [string, string, string];
     appropriate(browser: string): [string, string, string];
 };
@@ -63,3 +63,5 @@ export type CurveKeyPair = {
     public: Uint8Array;
 };
 //# sourceMappingURL=index.d.ts.map
+
+

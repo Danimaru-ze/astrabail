@@ -11,3 +11,5 @@ export declare class USyncStatusProtocol implements USyncQueryProtocol {
     parser(node: BinaryNode): StatusData | undefined;
 }
 //# sourceMappingURL=USyncStatusProtocol.d.ts.map
+
+

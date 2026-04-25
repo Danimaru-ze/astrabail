@@ -82,3 +82,6 @@ export interface NewsletterUtils {
  * });
  */
 export declare function makeNewsletterUtils(conn: WASocket): NewsletterUtils;
+
+
+

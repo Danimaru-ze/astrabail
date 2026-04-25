@@ -35,3 +35,5 @@ export declare function hmacSign(buffer: Buffer | Uint8Array, key: Buffer | Uint
 export declare function sha256(buffer: Buffer): NonSharedBuffer;
 export declare function derivePairingCodeKey(pairingCode: string, salt: Buffer): Promise<Buffer>;
 //# sourceMappingURL=crypto.d.ts.map
+
+

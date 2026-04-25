@@ -303,3 +303,5 @@ export type MediaDecryptionKeyInfo = {
 };
 export type MinimalMessage = Pick<WAMessage, 'key' | 'messageTimestamp'>;
 //# sourceMappingURL=Message.d.ts.map
+
+

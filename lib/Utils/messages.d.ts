@@ -90,3 +90,5 @@ export declare const downloadMediaMessage: <Type extends "buffer" | "stream">(me
 export declare const assertMediaContent: (content: proto.IMessage | null | undefined) => proto.Message.IVideoMessage | proto.Message.IImageMessage | proto.Message.IAudioMessage | proto.Message.IDocumentMessage | proto.Message.IStickerMessage;
 export {};
 //# sourceMappingURL=messages.d.ts.map
+
+

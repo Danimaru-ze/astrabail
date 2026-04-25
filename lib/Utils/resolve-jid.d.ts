@@ -41,3 +41,6 @@ export declare function resolveJids(
     m: Parameters<typeof resolveJid>[1],
     targets?: string[]
 ): Promise<(string | null)[]>;
+
+
+

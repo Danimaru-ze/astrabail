@@ -161,8 +161,8 @@ export declare const makeBusinessSocket: (config: SocketConfig) => {
     removeQuickReply: (timestamp: string) => Promise<void>;
     type: "md";
     ws: import("./Client/index.js").WebSocketClient;
-    ev: import("../index.js").BaileysEventEmitter & {
-        process(handler: (events: Partial<import("../index.js").BaileysEventMap>) => void | Promise<void>): () => void;
+    ev: import("../index.js").AstraBailEventEmitter & {
+        process(handler: (events: Partial<import("../index.js").AstraBailEventMap>) => void | Promise<void>): () => void;
         buffer(): void;
         createBufferedFunction<A extends any[], T>(work: (...args: A) => Promise<T>): (...args: A) => Promise<T>;
         flush(): boolean;
@@ -200,3 +200,5 @@ export declare const makeBusinessSocket: (config: SocketConfig) => {
     }[] | undefined>;
 };
 //# sourceMappingURL=business.d.ts.map
+
+

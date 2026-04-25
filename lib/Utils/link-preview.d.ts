@@ -19,3 +19,5 @@ export type URLGenerationOptions = {
  */
 export declare const getUrlInfo: (text: string, opts?: URLGenerationOptions) => Promise<WAUrlInfo | undefined>;
 //# sourceMappingURL=link-preview.d.ts.map
+
+

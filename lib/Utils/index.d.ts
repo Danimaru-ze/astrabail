@@ -20,3 +20,5 @@ export * from './identity-change-handler.js';
 export * from './messages-newsletter.js';
 export * from './resolve-jid.js';
 //# sourceMappingURL=index.d.ts.map
+
+

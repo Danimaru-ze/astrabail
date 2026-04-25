@@ -9,7 +9,7 @@ import type { Label } from './Label.js';
 import type { LabelAssociation } from './LabelAssociation.js';
 import type { MessageUpsertType, MessageUserReceiptUpdate, WAMessage, WAMessageKey, WAMessageUpdate } from './Message.js';
 import type { ConnectionState } from './State.js';
-export type BaileysEventMap = {
+export type AstraBailEventMap = {
     /** connection state has been updated -- WS closed, opened, connecting etc. */
     'connection.update': Partial<ConnectionState>;
     /** credentials updated -- some metadata, keys or something */
@@ -227,11 +227,13 @@ export type BufferedEventData = {
         [jid: string]: Partial<GroupMetadata>;
     };
 };
-export type BaileysEvent = keyof BaileysEventMap;
-export interface BaileysEventEmitter {
-    on<T extends keyof BaileysEventMap>(event: T, listener: (arg: BaileysEventMap[T]) => void): void;
-    off<T extends keyof BaileysEventMap>(event: T, listener: (arg: BaileysEventMap[T]) => void): void;
-    removeAllListeners<T extends keyof BaileysEventMap>(event: T): void;
-    emit<T extends keyof BaileysEventMap>(event: T, arg: BaileysEventMap[T]): boolean;
+export type AstraBailEvent = keyof AstraBailEventMap;
+export interface AstraBailEventEmitter {
+    on<T extends keyof AstraBailEventMap>(event: T, listener: (arg: AstraBailEventMap[T]) => void): void;
+    off<T extends keyof AstraBailEventMap>(event: T, listener: (arg: AstraBailEventMap[T]) => void): void;
+    removeAllListeners<T extends keyof AstraBailEventMap>(event: T): void;
+    emit<T extends keyof AstraBailEventMap>(event: T, arg: AstraBailEventMap[T]): boolean;
 }
 //# sourceMappingURL=Events.d.ts.map
+
+

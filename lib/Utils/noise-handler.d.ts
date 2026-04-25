@@ -18,3 +18,5 @@ export declare const makeNoiseHandler: ({ keyPair: { private: privateKey, public
     decodeFrame: (newData: Buffer | Uint8Array, onFrame: (buff: Uint8Array | BinaryNode) => void) => Promise<void>;
 };
 //# sourceMappingURL=noise-handler.d.ts.map
+
+

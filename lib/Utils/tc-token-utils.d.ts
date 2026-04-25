@@ -10,3 +10,5 @@ type TcTokenParams = {
 export declare function buildTcTokenFromJid({ authState, jid, baseContent }: TcTokenParams): Promise<BinaryNode[] | undefined>;
 export {};
 //# sourceMappingURL=tc-token-utils.d.ts.map
+
+

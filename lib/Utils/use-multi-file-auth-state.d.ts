@@ -11,3 +11,5 @@ export declare const useMultiFileAuthState: (folder: string) => Promise<{
     saveCreds: () => Promise<void>;
 }>;
 //# sourceMappingURL=use-multi-file-auth-state.d.ts.map
+
+

@@ -1,5 +1,5 @@
 import { proto } from '../../WAProto/index.js';
-import type { BaileysEventEmitter, BaileysEventMap, ConnectionState, WACallUpdateType, WAMessageKey, WAVersion } from '../Types/index.js';
+import type { AstraBailEventEmitter, AstraBailEventMap, ConnectionState, WACallUpdateType, WAMessageKey, WAVersion } from '../Types/index.js';
 import { type BinaryNode } from '../WABinary/index.js';
 export declare const BufferJSON: {
     replacer: (k: any, value: any) => any;
@@ -31,13 +31,13 @@ export declare const delayCancellable: (ms: number) => {
 export declare function promiseTimeout<T>(ms: number | undefined, promise: (resolve: (v: T) => void, reject: (error: any) => void) => void): Promise<T>;
 export declare const generateMessageIDV2: (userId?: string) => string;
 export declare const generateMessageID: () => string;
-export declare function bindWaitForEvent<T extends keyof BaileysEventMap>(ev: BaileysEventEmitter, event: T): (check: (u: BaileysEventMap[T]) => Promise<boolean | undefined>, timeoutMs?: number) => Promise<void>;
-export declare const bindWaitForConnectionUpdate: (ev: BaileysEventEmitter) => (check: (u: Partial<ConnectionState>) => Promise<boolean | undefined>, timeoutMs?: number) => Promise<void>;
+export declare function bindWaitForEvent<T extends keyof AstraBailEventMap>(ev: AstraBailEventEmitter, event: T): (check: (u: AstraBailEventMap[T]) => Promise<boolean | undefined>, timeoutMs?: number) => Promise<void>;
+export declare const bindWaitForConnectionUpdate: (ev: AstraBailEventEmitter) => (check: (u: Partial<ConnectionState>) => Promise<boolean | undefined>, timeoutMs?: number) => Promise<void>;
 /**
- * utility that fetches latest baileys version from the master branch.
+ * utility that fetches latest AstraBail version from the master branch.
  * Use to ensure your WA connection is always on the latest version
  */
-export declare const fetchLatestBaileysVersion: (options?: RequestInit) => Promise<{
+export declare const fetchLatestAstraBailVersion: (options?: RequestInit) => Promise<{
     version: WAVersion;
     isLatest: boolean;
     error?: undefined;
@@ -67,7 +67,7 @@ export declare const generateMdTagPrefix: () => string;
  */
 export declare const getStatusFromReceiptType: (type: string | undefined) => proto.WebMessageInfo.Status | undefined;
 /**
- * Stream errors generally provide a reason, map that to a baileys DisconnectReason
+ * Stream errors generally provide a reason, map that to a AstraBail DisconnectReason
  * @param reason the string reason given, eg. "conflict"
  */
 export declare const getErrorCodeFromStreamError: (node: BinaryNode) => {
@@ -89,3 +89,5 @@ export declare function trimUndefined(obj: {
 export declare function bytesToCrockford(buffer: Buffer): string;
 export declare function encodeNewsletterMessage(message: proto.IMessage): Uint8Array;
 //# sourceMappingURL=generics.d.ts.map
+
+

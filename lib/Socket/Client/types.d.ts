@@ -14,3 +14,5 @@ export declare abstract class AbstractSocketClient extends EventEmitter {
     abstract send(str: Uint8Array | string, cb?: (err?: Error) => void): boolean;
 }
 //# sourceMappingURL=types.d.ts.map
+
+

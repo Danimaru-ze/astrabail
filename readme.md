@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>Professional WhatsApp Web API Library — Built for the Next Generation of Bots</strong><br/>
-  <sub>Fork-optimized from Baileys · Maintained by <a href="https://github.com/Danimaru-ze">Danimaru-ze</a></sub>
+  <sub>Fork-optimized from AstraBail · Maintained by <a href="https://github.com/Danimaru-ze">Danimaru-ze</a></sub>
 </p>
 
 <p align="center">
@@ -33,7 +33,7 @@
 
 ## ✨ Tentang AstraBail
 
-**AstraBail** adalah library WhatsApp Web API profesional yang dioptimalkan dari basis *Baileys*. Dikelola oleh **Danimaru-ze**, library ini dirancang untuk performa tinggi, stabilitas maksimal, dan kemudahan integrasi ke berbagai proyek bot WhatsApp modern.
+**AstraBail** adalah library WhatsApp Web API profesional yang dioptimalkan dari basis *AstraBail*. Dikelola oleh **Danimaru-ze**, library ini dirancang untuk performa tinggi, stabilitas maksimal, dan kemudahan integrasi ke berbagai proyek bot WhatsApp modern.
 
 ### 🚀 Fitur Unggulan
 
@@ -240,20 +240,20 @@ await sock.sendMessage('6281234567890@s.whatsapp.net', {
     - [Send Broadcast & Stories](#send-broadcast--stories)
     - [Query a Broadcast List's Recipients & Name](#query-a-broadcast-lists-recipients--name)
 - [Writing Custom Functionality](#writing-custom-functionality)
-    - [Enabling Debug Level in Baileys Logs](#enabling-debug-level-in-baileys-logs)
+    - [Enabling Debug Level in AstraBail Logs](#enabling-debug-level-in-AstraBail-logs)
     - [How Whatsapp Communicate With Us](#how-whatsapp-communicate-with-us)
     - [Register a Callback for Websocket Events](#register-a-callback-for-websocket-events)
 
 <a id="connecting-account"></a>
 ## 🔗 Menghubungkan Akun
 
-WhatsApp provides a multi-device API that allows Baileys to be authenticated as a second WhatsApp client by scanning a **QR code** or **Pairing Code** with WhatsApp on your phone.
+WhatsApp provides a multi-device API that allows AstraBail to be authenticated as a second WhatsApp client by scanning a **QR code** or **Pairing Code** with WhatsApp on your phone.
 
 <a id="starting-socket-with-qr-code"></a>
 ### 🔹 Memulai Socket dengan Kode QR
 
 > [!TIP]
-> You can customize browser name if you connect with **QR-CODE**, with `Browser` constant, we have some browsers config, **see [here](https://baileys.whiskeysockets.io/types/BrowsersMap.html)**
+> You can customize browser name if you connect with **QR-CODE**, with `Browser` constant, we have some browsers config, **see [here](https://AstraBail.whiskeysockets.io/types/BrowsersMap.html)**
 
 ```javascript
 const { default: makeWASocket } = require("astrabail")
@@ -305,7 +305,7 @@ if (!sock.authState.creds.registered) {
 ### 🔹 Menerima Riwayat Penuh
 
 1. Set `syncFullHistory` as `true`
-2. Baileys, by default, use chrome browser config
+2. AstraBail, by default, use chrome browser config
     - If you'd like to emulate a desktop connection (and receive more message history), this browser setting to your Socket config:
 
 ```javascript
@@ -322,7 +322,7 @@ const sock = makeWASocket({
 
 <a id="caching-group-metadata-recommended"></a>
 ### 🧠 Caching Metadata Grup (Direkomendasikan)
-- If you use baileys for groups, we recommend you to set `cachedGroupMetadata` in socket config, you need to implement a cache like this:
+- If you use AstraBail for groups, we recommend you to set `cachedGroupMetadata` in socket config, you need to implement a cache like this:
 
     ```javascript
     const groupCache = new NodeCache({stdTTL: 5 * 60, useClones: false})
@@ -368,7 +368,7 @@ So, you can load the credentials to log back in:
 const makeWASocket = require("astrabail").default;
 const { useMultiFileAuthState } = require("astrabail");
 
-const { state, saveCreds } = await useMultiFileAuthState('auth_info_baileys')
+const { state, saveCreds } = await useMultiFileAuthState('auth_info_AstraBail')
 
 // will use the given state to connect
 // so if valid credentials are available -- it'll connect without QR
@@ -387,11 +387,11 @@ sock.ev.on('creds.update', saveCreds)
 <a id="handling-events"></a>
 ## 📡 Penanganan Event
 
-- Baileys uses the EventEmitter syntax for events.
+- AstraBail uses the EventEmitter syntax for events.
 They're all nicely typed up, so you shouldn't have any issues with an Intellisense editor like VS Code.
 
 > [!IMPORTANT]
-> **The events are [these](https://baileys.whiskeysockets.io/types/BaileysEventMap.html)**, it's important you see all events
+> **The events are [these](https://AstraBail.whiskeysockets.io/types/AstraBailEventMap.html)**, it's important you see all events
 
 You can listen to these events like this:
 ```javascript
@@ -413,7 +413,7 @@ const { DisconnectReason, useMultiFileAuthState } = require("astrabail");
 const Boom = require('@hapi/boom');
 
 async function connectToWhatsApp () {
-    const { state, saveCreds } = await useMultiFileAuthState('auth_info_baileys')
+    const { state, saveCreds } = await useMultiFileAuthState('auth_info_AstraBail')
     const sock = makeWASocket({
         // can provide additional config here
         auth: state,
@@ -486,7 +486,7 @@ sock.ev.on('messages.update', event => {
 <a id="handling-events"></a>
 ## 💾 Mengimplementasikan Data Store
 
-- Baileys does not come with a defacto storage for chats, contacts, or messages. However, a simple in-memory implementation has been provided. The store listens for chat updates, new messages, message updates, etc., to always have an up-to-date version of the data.
+- AstraBail does not come with a defacto storage for chats, contacts, or messages. However, a simple in-memory implementation has been provided. The store listens for chat updates, new messages, message updates, etc., to always have an up-to-date version of the data.
 
 > [!IMPORTANT]
 > I highly recommend building your own data store, as storing someone's entire chat history in memory is a terrible waste of RAM.
@@ -500,10 +500,10 @@ const { makeInMemoryStore } = require("astrabail");
 // can be written out to a file & read from it
 const store = makeInMemoryStore({ })
 // can be read from a file
-store.readFromFile('./baileys_store.json')
+store.readFromFile('./AstraBail_store.json')
 // saves the state to a file every 10s
 setInterval(() => {
-    store.writeToFile('./baileys_store.json')
+    store.writeToFile('./AstraBail_store.json')
 }, 10_000)
 
 const sock = makeWASocket({ })
@@ -579,7 +579,7 @@ await conn.upswgc(m.chat, {
 ### Kirim audio (voice note) ke status WhatsApp
 ```javascript
 await conn.upswgc(m.chat, {
-        audio: { url: "https://cdn.yupra.my.id/yp/xkv99g06.opus" },
+        audio: { url: "https://raw.githubusercontent.com/Danimaru-ze/AstraBail/main/assets/sample.opus" },
         caption : "apasi"
       });
 ```
@@ -594,8 +594,8 @@ dengan broadcast: true seperti dijelaskan pada bagian sebelumnya.`
 ## 💬 Mengirim Pesan
 
 - Send all types of messages with a single function
-    - **[Here](https://baileys.whiskeysockets.io/types/AnyMessageContent.html) you can see all message contents supported, like text message**
-    - **[Here](https://baileys.whiskeysockets.io/types/MiscMessageGenerationOptions.html) you can see all options supported, like quote message**
+    - **[Here](https://AstraBail.whiskeysockets.io/types/AnyMessageContent.html) you can see all message contents supported, like text message**
+    - **[Here](https://AstraBail.whiskeysockets.io/types/MiscMessageGenerationOptions.html) you can see all options supported, like quote message**
 
     ```javascript
     const jid: string
@@ -1039,7 +1039,7 @@ await client.sendMessage(
 
 <a id="handling-events"></a>
 #### 📤 Meneruskan Pesan
-- You need to have message object, can be retrieved from [store](#implementing-a-data-store) or use a [message](https://baileys.whiskeysockets.io/types/WAMessage.html) object
+- You need to have message object, can be retrieved from [store](#implementing-a-data-store) or use a [message](https://AstraBail.whiskeysockets.io/types/WAMessage.html) object
 ```javascript
 const msg = getMessageFromStore() // implement this on your end
 await sock.sendMessage(jid, { forward: msg }) // WA forward the message!
@@ -1082,7 +1082,7 @@ await sock.sendMessage(
 
 <a id="handling-events"></a>
 #### ❤️ Pesan Reaksi
-- You need to pass the key of message, you can retrieve from [store](#implementing-a-data-store) or use a [key](https://baileys.whiskeysockets.io/types/WAMessageKey.html) object
+- You need to pass the key of message, you can retrieve from [store](#implementing-a-data-store) or use a [key](https://AstraBail.whiskeysockets.io/types/WAMessageKey.html) object
 ```javascript
 await sock.sendMessage(
     jid,
@@ -1097,7 +1097,7 @@ await sock.sendMessage(
 
 <a id="handling-events"></a>
 #### 📌 Pesan Pin
-- You need to pass the key of message, you can retrieve from [store](#implementing-a-data-store) or use a [key](https://baileys.whiskeysockets.io/types/WAMessageKey.html) object
+- You need to pass the key of message, you can retrieve from [store](#implementing-a-data-store) or use a [key](https://AstraBail.whiskeysockets.io/types/WAMessageKey.html) object
 
 - Time can be:
 
@@ -1140,14 +1140,14 @@ await sock.sendMessage(
 ### 💬 Mengirim Pesan with Link Previews
 
 1. By default, wa does not have link generation when sent from the web
-2. Baileys has a function to generate the content for these link previews
+2. AstraBail has a function to generate the content for these link previews
 3. To enable this function's usage, add `link-preview-js` as a dependency to your project with `yarn add link-preview-js`
 4. Send a link:
 ```javascript
 await sock.sendMessage(
     jid,
     {
-        text: 'Hi, this was sent using https://github.com/whiskeysockets/baileys'
+        text: 'Hi, this was sent using https://github.com/whiskeysockets/AstraBail'
     }
 )
 ```
@@ -1157,9 +1157,9 @@ await sock.sendMessage(
 Sending media (video, stickers, images) is easier & more efficient than ever.
 
 > [!NOTE]
-> In media messages, you can pass `{ stream: Stream }` or `{ url: Url }` or `Buffer` directly, you can see more [here](https://baileys.whiskeysockets.io/types/WAMediaUpload.html)
+> In media messages, you can pass `{ stream: Stream }` or `{ url: Url }` or `Buffer` directly, you can see more [here](https://AstraBail.whiskeysockets.io/types/WAMediaUpload.html)
 
-- When specifying a media url, Baileys never loads the entire buffer into memory; it even encrypts the media as a readable stream.
+- When specifying a media url, AstraBail never loads the entire buffer into memory; it even encrypts the media as a readable stream.
 
 > [!TIP]
 > It's recommended to use Stream or Url to save memory
@@ -1303,7 +1303,7 @@ sock.ev.on('messages.upsert', async ({ [m] }) => {
             { },
             {
                 logger,
-                // pass this so that baileys can request a reupload of media
+                // pass this so that AstraBail can request a reupload of media
                 // that has been deleted
                 reuploadRequest: sock.updateMediaMessage
             }
@@ -1337,8 +1337,8 @@ await sock.rejectCall(callId, callFrom)
 
 <a id="handling-events"></a>
 ### 📖 Membaca Pesan
-- A set of message [keys](https://baileys.whiskeysockets.io/types/WAMessageKey.html) must be explicitly marked read now.
-- You cannot mark an entire 'chat' read as it were with Baileys Web.
+- A set of message [keys](https://AstraBail.whiskeysockets.io/types/WAMessageKey.html) must be explicitly marked read now.
+- You cannot mark an entire 'chat' read as it were with AstraBail Web.
 This means you have to keep track of unread messages.
 
 ```javascript
@@ -1353,7 +1353,7 @@ On a `WAMessage`, the `messageID` can be accessed using ```messageID = message.k
 <a id="handling-events"></a>
 ### 🟢 Memperbarui Presence
 
-- ``` presence ``` can be one of [these](https://baileys.whiskeysockets.io/types/WAPresence.html)
+- ``` presence ``` can be one of [these](https://AstraBail.whiskeysockets.io/types/WAPresence.html)
 - The presence expires after about 10 seconds.
 - This lets the person/group with `jid` know whether you're online, offline, typing etc.
 
@@ -1362,7 +1362,7 @@ await sock.sendPresenceUpdate('available', jid)
 ```
 
 > [!NOTE]
-> If a desktop client is active, WA doesn't send push notifications to the device. If you would like to receive said notifications -- mark your Baileys client offline using `sock.sendPresenceUpdate('unavailable')`
+> If a desktop client is active, WA doesn't send push notifications to the device. If you would like to receive said notifications -- mark your AstraBail client offline using `sock.sendPresenceUpdate('unavailable')`
 
 <a id="handling-events"></a>
 ## 🗂️ Memodifikasi Chat
@@ -1580,7 +1580,7 @@ await sock.updateProfileName('My name')
 - To change your display picture or a group's
 
 > [!NOTE]
-> Like media messages, you can pass `{ stream: Stream }` or `{ url: Url }` or `Buffer` directly, you can see more [here](https://baileys.whiskeysockets.io/types/WAMediaUpload.html)
+> Like media messages, you can pass `{ stream: Stream }` or `{ url: Url }` or `Buffer` directly, you can see more [here](https://AstraBail.whiskeysockets.io/types/WAMediaUpload.html)
 
 ```javascript
 await sock.updateProfilePicture(jid, { url: './new-profile-picture.jpeg' })
@@ -1824,8 +1824,8 @@ await sock.sendMessage(
     }
 )
 ```
-- Message body can be a `extendedTextMessage` or `imageMessage` or `videoMessage` or `voiceMessage`, see [here](https://baileys.whiskeysockets.io/types/AnyRegularMessageContent.html)
-- You can add `backgroundColor` and other options in the message options, see [here](https://baileys.whiskeysockets.io/types/MiscMessageGenerationOptions.html)
+- Message body can be a `extendedTextMessage` or `imageMessage` or `videoMessage` or `voiceMessage`, see [here](https://AstraBail.whiskeysockets.io/types/AnyRegularMessageContent.html)
+- You can add `backgroundColor` and other options in the message options, see [here](https://AstraBail.whiskeysockets.io/types/MiscMessageGenerationOptions.html)
 - `broadcast: true` enables broadcast mode
 - `statusJidList`: a list of people that you can get which you need to provide, which are the people who will get this status message.
 
@@ -1841,10 +1841,10 @@ console.log (`list name: ${bList.name}, recps: ${bList.recipients}`)
 
 <a id="handling-events"></a>
 ## ✍️ Menulis Fungsionalitas Kustom
-Baileys is written with custom functionality in mind. Instead of forking the project & re-writing the internals, you can simply write your own extensions.
+AstraBail is written with custom functionality in mind. Instead of forking the project & re-writing the internals, you can simply write your own extensions.
 
 <a id="handling-events"></a>
-### 🐛 Mengaktifkan Level Debug di Log Baileys
+### 🐛 Mengaktifkan Level Debug di Log AstraBail
 First, enable the logging of unhandled messages from WhatsApp by setting:
 ```javascript
 const sock = makeWASocket({

@@ -38,7 +38,7 @@ export type SocketConfig = {
     defaultQueryTimeoutMs: number | undefined;
     /** ping-pong interval for WS connection */
     keepAliveIntervalMs: number;
-    /** should baileys use the mobile api instead of the multi device api
+    /** should AstraBail use the mobile api instead of the multi device api
      * @deprecated This feature has been removed
      */
     mobile?: boolean;
@@ -90,9 +90,9 @@ export type SocketConfig = {
     placeholderResendCache?: CacheStore;
     /** width for link preview images */
     linkPreviewImageThumbnailWidth: number;
-    /** Should Baileys ask the phone for full history, will be received async */
+    /** Should AstraBail ask the phone for full history, will be received async */
     syncFullHistory: boolean;
-    /** Should baileys fire init queries automatically, default true */
+    /** Should AstraBail fire init queries automatically, default true */
     fireInitQueries: boolean;
     /**
      * generate a high quality link preview,
@@ -131,3 +131,5 @@ export type SocketConfig = {
     makeSignalRepository: (auth: SignalAuthState, logger: ILogger, pnToLIDFunc?: (jids: string[]) => Promise<LIDMapping[] | undefined>) => SignalRepositoryWithLIDStore;
 };
 //# sourceMappingURL=Socket.d.ts.map
+
+

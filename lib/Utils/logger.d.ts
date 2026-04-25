@@ -11,3 +11,5 @@ export interface ILogger {
 declare const _default: P.Logger<never, boolean>;
 export default _default;
 //# sourceMappingURL=logger.d.ts.map
+
+
