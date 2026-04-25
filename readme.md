@@ -256,7 +256,7 @@ WhatsApp provides a multi-device API that allows AstraBail to be authenticated a
 ### 🔹 Memulai Socket dengan Kode QR
 
 > [!TIP]
-> You can customize browser name if you connect with **QR-CODE**, with `Browser` constant, we have some browsers config, **see [here](https://AstraBail.whiskeysockets.io/types/BrowsersMap.html)**
+> You can customize browser name if you connect with **QR-CODE**, with `Browser` constant, we have some browsers config, **see [here](https://baileys.whiskeysockets.io/types/BrowsersMap.html)**
 
 ```javascript
 const { default: makeWASocket } = require("astrabail")
@@ -394,7 +394,7 @@ sock.ev.on('creds.update', saveCreds)
 They're all nicely typed up, so you shouldn't have any issues with an Intellisense editor like VS Code.
 
 > [!IMPORTANT]
-> **The events are [these](https://AstraBail.whiskeysockets.io/types/AstraBailEventMap.html)**, it's important you see all events
+> **The events are [these](https://baileys.whiskeysockets.io/types/AstraBailEventMap.html)**, it's important you see all events
 
 You can listen to these events like this:
 ```javascript
@@ -597,8 +597,8 @@ dengan broadcast: true seperti dijelaskan pada bagian sebelumnya.`
 ## 💬 Mengirim Pesan
 
 - Send all types of messages with a single function
-    - **[Here](https://AstraBail.whiskeysockets.io/types/AnyMessageContent.html) you can see all message contents supported, like text message**
-    - **[Here](https://AstraBail.whiskeysockets.io/types/MiscMessageGenerationOptions.html) you can see all options supported, like quote message**
+    - **[Here](https://baileys.whiskeysockets.io/types/AnyMessageContent.html) you can see all message contents supported, like text message**
+    - **[Here](https://baileys.whiskeysockets.io/types/MiscMessageGenerationOptions.html) you can see all options supported, like quote message**
 
     ```javascript
     const jid: string
@@ -1042,7 +1042,7 @@ await client.sendMessage(
 
 <a id="handling-events"></a>
 #### 📤 Meneruskan Pesan
-- You need to have message object, can be retrieved from [store](#implementing-a-data-store) or use a [message](https://AstraBail.whiskeysockets.io/types/WAMessage.html) object
+- You need to have message object, can be retrieved from [store](#implementing-a-data-store) or use a [message](https://baileys.whiskeysockets.io/types/WAMessage.html) object
 ```javascript
 const msg = getMessageFromStore() // implement this on your end
 await sock.sendMessage(jid, { forward: msg }) // WA forward the message!
@@ -1085,7 +1085,7 @@ await sock.sendMessage(
 
 <a id="handling-events"></a>
 #### ❤️ Pesan Reaksi
-- You need to pass the key of message, you can retrieve from [store](#implementing-a-data-store) or use a [key](https://AstraBail.whiskeysockets.io/types/WAMessageKey.html) object
+- You need to pass the key of message, you can retrieve from [store](#implementing-a-data-store) or use a [key](https://baileys.whiskeysockets.io/types/WAMessageKey.html) object
 ```javascript
 await sock.sendMessage(
     jid,
@@ -1100,7 +1100,7 @@ await sock.sendMessage(
 
 <a id="handling-events"></a>
 #### 📌 Pesan Pin
-- You need to pass the key of message, you can retrieve from [store](#implementing-a-data-store) or use a [key](https://AstraBail.whiskeysockets.io/types/WAMessageKey.html) object
+- You need to pass the key of message, you can retrieve from [store](#implementing-a-data-store) or use a [key](https://baileys.whiskeysockets.io/types/WAMessageKey.html) object
 
 - Time can be:
 
@@ -1160,7 +1160,7 @@ await sock.sendMessage(
 Sending media (video, stickers, images) is easier & more efficient than ever.
 
 > [!NOTE]
-> In media messages, you can pass `{ stream: Stream }` or `{ url: Url }` or `Buffer` directly, you can see more [here](https://AstraBail.whiskeysockets.io/types/WAMediaUpload.html)
+> In media messages, you can pass `{ stream: Stream }` or `{ url: Url }` or `Buffer` directly, you can see more [here](https://baileys.whiskeysockets.io/types/WAMediaUpload.html)
 
 - When specifying a media url, AstraBail never loads the entire buffer into memory; it even encrypts the media as a readable stream.
 
@@ -1340,7 +1340,7 @@ await sock.rejectCall(callId, callFrom)
 
 <a id="handling-events"></a>
 ### 📖 Membaca Pesan
-- A set of message [keys](https://AstraBail.whiskeysockets.io/types/WAMessageKey.html) must be explicitly marked read now.
+- A set of message [keys](https://baileys.whiskeysockets.io/types/WAMessageKey.html) must be explicitly marked read now.
 - You cannot mark an entire 'chat' read as it were with AstraBail Web.
 This means you have to keep track of unread messages.
 
@@ -1356,7 +1356,7 @@ On a `WAMessage`, the `messageID` can be accessed using ```messageID = message.k
 <a id="handling-events"></a>
 ### 🟢 Memperbarui Presence
 
-- ``` presence ``` can be one of [these](https://AstraBail.whiskeysockets.io/types/WAPresence.html)
+- ``` presence ``` can be one of [these](https://baileys.whiskeysockets.io/types/WAPresence.html)
 - The presence expires after about 10 seconds.
 - This lets the person/group with `jid` know whether you're online, offline, typing etc.
 
@@ -1583,7 +1583,7 @@ await sock.updateProfileName('My name')
 - To change your display picture or a group's
 
 > [!NOTE]
-> Like media messages, you can pass `{ stream: Stream }` or `{ url: Url }` or `Buffer` directly, you can see more [here](https://AstraBail.whiskeysockets.io/types/WAMediaUpload.html)
+> Like media messages, you can pass `{ stream: Stream }` or `{ url: Url }` or `Buffer` directly, you can see more [here](https://baileys.whiskeysockets.io/types/WAMediaUpload.html)
 
 ```javascript
 await sock.updateProfilePicture(jid, { url: './new-profile-picture.jpeg' })
@@ -1827,8 +1827,8 @@ await sock.sendMessage(
     }
 )
 ```
-- Message body can be a `extendedTextMessage` or `imageMessage` or `videoMessage` or `voiceMessage`, see [here](https://AstraBail.whiskeysockets.io/types/AnyRegularMessageContent.html)
-- You can add `backgroundColor` and other options in the message options, see [here](https://AstraBail.whiskeysockets.io/types/MiscMessageGenerationOptions.html)
+- Message body can be a `extendedTextMessage` or `imageMessage` or `videoMessage` or `voiceMessage`, see [here](https://baileys.whiskeysockets.io/types/AnyRegularMessageContent.html)
+- You can add `backgroundColor` and other options in the message options, see [here](https://baileys.whiskeysockets.io/types/MiscMessageGenerationOptions.html)
 - `broadcast: true` enables broadcast mode
 - `statusJidList`: a list of people that you can get which you need to provide, which are the people who will get this status message.
 
