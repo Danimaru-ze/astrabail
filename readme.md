@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>Professional WhatsApp Web API Library — Built for the Next Generation of Bots</strong><br/>
-  <sub>Fork-optimized from AstraBail · Maintained by <a href="https://github.com/Danimaru-ze">Danimaru-ze</a></sub>
+  <sub>Fork-optimized from Baileys · Powered by Astra-Libsignal · Maintained by <a href="https://github.com/Danimaru-ze">Danimaru-ze</a></sub>
 </p>
 
 <p align="center">
@@ -25,6 +25,9 @@
   <a href="https://whatsapp.com/channel/0029Vazo6KM8kyyJ4eWh3A25">
     <img src="https://img.shields.io/badge/WhatsApp-Channel-25D366?style=flat-square&logo=whatsapp&logoColor=white" alt="WhatsApp Channel" />
   </a>
+  <a href="https://github.com/Danimaru-ze/astra-libsignal">
+    <img src="https://img.shields.io/badge/Crypto_Engine-Astra_Libsignal-8A2BE2?style=flat-square" alt="Astra Libsignal" />
+  </a>
 </p>
 
 </div>
@@ -33,7 +36,7 @@
 
 ## ✨ Tentang AstraBail
 
-**AstraBail** adalah library WhatsApp Web API profesional yang dioptimalkan dari basis *AstraBail*. Dikelola oleh **Danimaru-ze**, library ini dirancang untuk performa tinggi, stabilitas maksimal, dan kemudahan integrasi ke berbagai proyek bot WhatsApp modern.
+**AstraBail** adalah library WhatsApp Web API profesional yang dioptimalkan dari basis *Baileys*. Dikelola oleh **Danimaru-ze**, library ini dirancang untuk performa tinggi, stabilitas maksimal, dan kemudahan integrasi ke berbagai proyek bot WhatsApp modern. Kini ditenagai penuh oleh **astra-libsignal** untuk proses enkripsi tingkat tinggi.
 
 ### 🚀 Fitur Unggulan
 
